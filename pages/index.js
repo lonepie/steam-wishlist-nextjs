@@ -47,26 +47,25 @@ export default function Home() {
             }
 
             if (res.status === 200) {
-                window.location.href = `/worth/${encodeURIComponent(data.steamid)}`;
+                window.location.href = `/wishlist/${encodeURIComponent(data.steamid)}`;
             }
         }
     }
 
     return (
         <main
-            className={`flex min-h-screen flex-col items-center ${inter.className}">
-`}
+            className={`flex min-h-screen flex-col items-center ${inter.className}">`}
         >
             <Head>
-                <title>Steam Inventory Worth Calculator</title>
-                <meta name="description" content="Steam Inventory Worth Calculator"/>
+                <title>Steam Wishlist Viewer</title>
+                <meta name="description" content="Steam Wishlist Viewer"/>
             </Head>
             <Screen loading={loading}>
                 <div className="flex flex-col w-full gap-20 items-center">
                     <div className="flex justify-center w-full mt-20 ">
                         <div className="flex flex-col items-center justify-center gap-10">
                             <h1 className="text-4xl font-bold text-center text-white w-3/4">
-                                Steam Inventory Worth Calculator
+                                Steam Wishlist Viewer
                             </h1>
                             {error !== null && (
                                 <div className="bg-red-500 text-white p-4 rounded-lg">
@@ -96,12 +95,10 @@ export default function Home() {
                             What is this?
                         </h1>
                         <p className="text-white text-lg">
-                            This is a simple tool to calculate the worth of your steam inventory. It is not 100%
-                            accurate but it is close enough. It uses the API from <Link target="_blank"
+                            This is a simple tool to view your Steam wishlist. It uses the API from <Link target="_blank"
                                                                                      href="https://www.steamwebapi.com"
                                                                                      className="underline text-bold">www.steamwebapi.com</Link> to
-                            get the prices of the
-                            items in your inventory. It is not affiliated with Valve or Steam in any way.
+                            look up your Steam profile.
                         </p>
                         <h1 className="text-4xl font-bold text-left text-white w-3/4 mt-10">
                             Its Open Source!
